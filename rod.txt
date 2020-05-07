@@ -1,0 +1,23 @@
+%endblock AtomicCoordinatesAndAtomicSpecies
+PAO.BasisSize     DZP
+PAO.EnergyShift   0.05 eV
+MD.TypeOfRun      CG
+MD.NumCGsteps     1000
+MaxSCFIterations  200
+MD.MaxForceTol    0.05 eV/Ang
+MeshCutoff        150.0 Ry
+DM.UseSaveDM      true
+UseSaveData       true
+MD.UseSaveXV      true
+MD.UseSaveCG      true
+DM.MixingWeight   0.10
+DM.NumberPulay    3
+WriteCoorXmol
+WriteMullikenPop 1
+XC.Functional     GGA
+XC.Authors        PBE
+SaveRHO      true
+SolutionMethod diagon
+DM.Tolerance          1.d-3         # Tolerance in maximum difference
+ElectronicTemperature  50 meV
+

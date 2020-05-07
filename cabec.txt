@@ -1,0 +1,37 @@
+SystemLabel      Bncob_atrazin
+NumberOfAtoms    128
+NumberOfSpecies  6
+
+SpinPolarized		True
+SingleExcitation	True
+
+%block ChemicalSpeciesLabel
+ 1   	7  	N_gga
+ 2   	5  	B_gga
+ 3   	27 	Co_gga
+ 4   	17	Cl_gga	
+ 5      6	C_gga
+ 6      1 	H_gga
+%endblock ChemicalSpeciesLabel
+
+LatticeConstant 12.5631  Ang
+%block LatticeVectors
+2.000   0.000000  0.000
+0.000   2.866025  0.000
+0.000   0.000000  1.000
+%endblock LatticeVectors
+
+%block kgrid_Monkhorst_Pack
+ 2   0   0   0.0
+ 0   2   0   0.0
+ 0   0   3   0.0
+%endblock kgrid_Monkhorst_Pack
+
+%block BandLines
+1  0.000  0.000  0.000  \Gamma
+30 0.000  0.000  1.000  X
+%endblock BandLines
+
+AtomicCoordinatesFormat NotScaledCartesianAng
+AtomCoorFormatOut   NotScaledCartesianAng
+%block AtomicCoordinatesAndAtomicSpecies

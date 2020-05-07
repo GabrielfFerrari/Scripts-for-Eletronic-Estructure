@@ -1,0 +1,21 @@
+#################################################################
+	Conjunto de scripts para automação 			#
+	de tarefas do pacote SIESTA				#
+								#
+calculos.sh >> script que automatiza a busca por		#
+todas as informações:						#
+			Energia total				#
+			Momento magnetico			#
+			geração do .dat				#
+			Gráfico de bandas			#
+			Gap de energia 				#
+eb_energy.py >> calcula a energia de ligação entre		#
+estruturas							#
+As estruturas de bandas, DOS e PDOS são plotadas utilizando	#
+a biblioteca matplotlib do python.				#
+Foi criado o arquivo eletronic.py que contem diversas funções	#
+para realizar a automação dos dados das propriedades eletronicas#
+de arquivos de saída do SIESTA.					#
+Se faz necessário alguns utilitários para a utilização do script#
+sendo esses: gnubands.f, eig2dos.f e o fmpdos.f			#
+#################################################################
