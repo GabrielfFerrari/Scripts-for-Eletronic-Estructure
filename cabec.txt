@@ -1,20 +1,19 @@
-SystemLabel      Bncob_atrazin
-NumberOfAtoms    128
-NumberOfSpecies  6
+SystemLabel      Sistem
+NumberOfAtoms    N
+NumberOfSpecies  N
 
 SpinPolarized		True
 SingleExcitation	True
 
+%block ProjectedDensityOfStates
+-9.00 2.0 0.1 3000 eV
+%endblock ProjectedDensityOfStates
+
 %block ChemicalSpeciesLabel
- 1   	7  	N_gga
- 2   	5  	B_gga
- 3   	27 	Co_gga
- 4   	17	Cl_gga	
- 5      6	C_gga
- 6      1 	H_gga
+
 %endblock ChemicalSpeciesLabel
 
-LatticeConstant 12.5631  Ang
+LatticeConstant VECTOR  Ang
 %block LatticeVectors
 2.000   0.000000  0.000
 0.000   2.866025  0.000
@@ -22,9 +21,9 @@ LatticeConstant 12.5631  Ang
 %endblock LatticeVectors
 
 %block kgrid_Monkhorst_Pack
- 2   0   0   0.0
- 0   2   0   0.0
- 0   0   3   0.0
+ 1   0   0   0.0
+ 0   1   0   0.0
+ 0   0   9   0.0
 %endblock kgrid_Monkhorst_Pack
 
 %block BandLines

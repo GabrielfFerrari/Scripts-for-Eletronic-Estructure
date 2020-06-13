@@ -1,7 +1,7 @@
 #!/bin/bash
-n=2 # Number of species chemical for PDOS Calculate
+n=N # Number of species chemical for PDOS Calculate
 FORTRAN_PROGRAMS=( "gnubands" "eigdos" "fmpdos.f" "eletronic.py")
-ELETRONIC_DATA(){ # puxa as informações: energia total e momento magnetico
+ELETRONIC_DATA(){ #get informations about total energy and magnetic moment
   pwd >> ../Data-pristine.txt
   tail -n 32 *.out | grep Total >> ../Data-pristine.txt
 }
@@ -18,6 +18,7 @@ DATA_BUILD(){
 }
 PYTHON_MANAGER(){
   sed -i 's/name/'$code'/' eletronic.py ; sed -i 's/PF/'$FERMI'/' eletronic.py ; sed -i 's/EF/'$FERMI'/' eletronic.py
+  grep constrained *.out >> const.dat ; sed -i 's/'$code'/name.input' eletronic.py
   PLOTS=("DOS_PLOTY()" "PDOS_PLOTY()" "BANDS_PLOTY()" "GAP_CALCULATE()")
   for ((k=0; k <${#PLOTS[@]}; k++)); do
     if [ $k -eq 3 ]; then
@@ -27,7 +28,7 @@ PYTHON_MANAGER(){
 done
 }
 DIRETORY_MANAGER(){
-	DIR=("tubo-80")
+	DIR=("")
 for (( a=0; a<${#DIR[@]}; a++ )); do
 	echo "Inicio do primeiro loop"
   for ((b=0; b<${#FORTRAN_PROGRAMS[@]}; b++)); do
